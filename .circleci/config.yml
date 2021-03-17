@@ -10,7 +10,7 @@ jobs:
       - checkout
       - run: mkdir /tmp/tests
       - run: yarn add @commitlint/cli @commitlint/config-conventional commitlint-format-junit
-      - run: npx commitlint --from master --to $CIRCLE_BRANCH -o commitlint-format-junit >> /tmp/tests/results.xml
+      - run: npx commitlint --from main --to $CIRCLE_BRANCH -o commitlint-format-junit >> /tmp/tests/results.xml
       - store_test_results:
           path: /tmp/tests/  
   build:
