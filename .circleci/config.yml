@@ -37,7 +37,7 @@ jobs:
           yarn add auto @auto-it/all-contributors
           @auto-it/first-time-contributor
           @auto-it/core
-          @auto-it/git-tag
+          @auto-it/gem
           @auto-it/conventional-commits
           @auto-it/released
       - run: |
