@@ -36,7 +36,7 @@ jobs:
             git config --global user.email "angeliski@hotmail.com" && \
             git config --global user.name "angeliski"
       - run: >
-          yarn add auto @auto-it/all-contributors
+          yarn global add auto @auto-it/all-contributors
           @auto-it/first-time-contributor
           @auto-it/core
           @auto-it/gem
