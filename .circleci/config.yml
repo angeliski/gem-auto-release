@@ -27,7 +27,7 @@ jobs:
             bundle exec rspec 
   publish:
     docker:
-      - image: circleci/node:12
+      - image: circleci/ruby:2.7.1
     steps:
       - checkout
       - run:
