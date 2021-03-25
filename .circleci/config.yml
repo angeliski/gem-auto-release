@@ -1,0 +1,58 @@
+version: 2.1
+
+jobs:
+  commit_lint:
+    docker:
+      - image: circleci/node:12
+    steps:
+      - checkout
+      - run: mkdir /tmp/tests
+      - run: yarn add @commitlint/cli @commitlint/config-conventional commitlint-format-junit
+      - run: npx commitlint --from main --to $CIRCLE_BRANCH -o commitlint-format-junit >> /tmp/tests/results.xml
+      - store_test_results:
+          path: /tmp/tests/  
+  build:
+    docker:
+      - image: circleci/ruby:2.7.1
+    steps:
+      - checkout
+      - run:
+          name: install dependencies
+          command: |
+            bundle install 
+      # run tests!
+      - run:
+          name: run tests
+          command: |
+            bundle exec rspec 
+  publish:
+    docker:
+      - image: circleci/node:12
+    steps:
+      - checkout
+      - run:
+          name: 'Set github username and email'
+          command: |
+            git config --global user.email "angeliski@hotmail.com" && \
+            git config --global user.name "angeliski"
+      - run: >
+          yarn add auto @auto-it/all-contributors
+          @auto-it/first-time-contributor
+          @auto-it/core
+          @auto-it/gem
+          @auto-it/conventional-commits
+          @auto-it/released
+      - run: |
+          npx auto shipit
+
+workflows:
+  version: 2
+  CI:
+    jobs:
+      - commit_lint
+      - build:
+          requires:
+            - commit_lint
+      - publish:
+          requires:
+            - build

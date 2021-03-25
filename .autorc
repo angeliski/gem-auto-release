@@ -1,0 +1,14 @@
+{
+  "plugins": [
+    "gem",
+    "all-contributors",
+    "conventional-commits",
+    "first-time-contributor",
+    "released"
+  ],
+  "owner": "angeliski",
+  "repo": "gem-auto-release",
+  "name": "angeliski",
+  "email": "angeliski@hotmail.com",
+  "onlyPublishWithReleaseLabel": true
+}
