@@ -31,6 +31,10 @@ jobs:
     steps:
       - checkout
       - run:
+          name: install dependencies
+          command: |
+            bundle install 
+      - run:
           name: 'Set github username and email'
           command: |
             git config --global user.email "angeliski@hotmail.com" && \
