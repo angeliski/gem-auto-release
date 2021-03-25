@@ -6,6 +6,7 @@ module Gem
       class Error < StandardError; end
       # Your code goes here...
       # Just a patch bump
+      # Just a minor bump
     end
   end
 end
