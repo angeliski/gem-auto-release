@@ -27,13 +27,17 @@ jobs:
             bundle exec rspec 
   publish:
     docker:
-      - image: circleci/ruby:2.7.1
+      - image: circleci/ruby:2.7.1-node
     steps:
       - checkout
+      - run:
+          name: install plugins
+          command: sudo npm i -g auto-plugin-gem-canary-release
       - run:
           name: install dependencies
           command: |
             bundle install 
+      - run: gem install gem-release      
       - run:
           name: 'Set github username and email'
           command: |
