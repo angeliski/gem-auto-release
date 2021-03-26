@@ -5,7 +5,7 @@
     "conventional-commits",
     "first-time-contributor",
     "released",
-    "auto-plugin-gem-canary-release"
+    "../plugins/auto-plugin-gem-canary-release"
   ],
   "owner": "angeliski",
   "repo": "gem-auto-release",

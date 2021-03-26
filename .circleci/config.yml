@@ -32,7 +32,9 @@ jobs:
       - checkout
       - run:
           name: install plugins
-          command: sudo npm i -g auto-plugin-gem-canary-release
+          command: |            
+            git clone git@github.com:angeliski/auto-plugin-gem-canary-release.git ../plugins/auto-plugin-gem-canary-release
+
       - run:
           name: install dependencies
           command: |
