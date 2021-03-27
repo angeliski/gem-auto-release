@@ -1,11 +1,10 @@
 {
   "plugins": [
-    "gem",
+    "/home/rogerio.angeliski/workspace/auto/plugins/gem",
     "all-contributors",
     "conventional-commits",
     "first-time-contributor",
-    "released",
-    "../plugins/auto-plugin-gem-canary-release"
+    "released"
   ],
   "owner": "angeliski",
   "repo": "gem-auto-release",
