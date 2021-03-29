@@ -30,7 +30,11 @@ jobs:
       - image: angeliski/auto-ruby-releaser
     steps:
       - checkout
-      - run: /auto shipit --verbose
+      - run: |
+          echo $NODE_PATH
+          ls -la $NODE_PATH
+          /auto shipit --verbose
+
 
 workflows:
   version: 2
