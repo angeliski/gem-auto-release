@@ -27,23 +27,10 @@ jobs:
             bundle exec rspec 
   publish:
     docker:
-      - image: circleci/ruby:2.7.1
+      - image: angeliski/auto-ruby-releaser
     steps:
       - checkout
-      - run:
-          name: install dependencies
-          command: |
-            bundle install 
-      - run:
-          name: 'Set github username and email'
-          command: |
-            git config --global user.email "angeliski@hotmail.com" && \
-            git config --global user.name "angeliski"
-      - run: |
-          curl -vkL -o - https://github.com/intuit/auto/releases/download/v10.22.1/auto-linux.gz | gunzip > ~/auto
-          chmod a+x ~/auto
-
-      - run: ~/auto shipit
+      - run: /auto shipit
 
 workflows:
   version: 2
