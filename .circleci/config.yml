@@ -31,8 +31,6 @@ jobs:
     steps:
       - checkout
       - run: |
-          echo $NODE_PATH
-          ls -la $NODE_PATH
           /auto shipit --verbose
 
 
