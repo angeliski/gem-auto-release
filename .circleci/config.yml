@@ -30,6 +30,7 @@ jobs:
       - image: angeliski/auto-ruby-releaser
     steps:
       - checkout
+      - run: bundle install
       - run: |
           /auto shipit --verbose
 
