@@ -1,7 +1,7 @@
 {
   "extends": "git-emoji",
   "plugins": [
-    "gem-canary-release",
+    "gem",
     "all-contributors",
     "conventional-commits",
     "first-time-contributor",
